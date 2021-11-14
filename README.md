@@ -11,4 +11,4 @@ Nur wenige Klicks genügen um neue Termine hinzuzufügen oder auch zu entfernen.
 
 Probiere es aus!
 
-
+[![Java CI with Gradle](https://github.com/Eyad-Wahdan/PlanIt/actions/workflows/gradle.yml/badge.svg)](https://github.com/Eyad-Wahdan/PlanIt/actions/workflows/gradle.yml)
