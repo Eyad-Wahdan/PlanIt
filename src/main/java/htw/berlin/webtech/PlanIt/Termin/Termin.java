@@ -9,13 +9,20 @@ public class Termin {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
+
     private LocalDate date;
     private LocalTime time;
     private String event;
 
+
     public Termin() {
+    }
+
+    public Termin(LocalDate date, LocalTime time, String event) {
+        this.date = date;
+        this.time = time;
+        this.event = event;
     }
 
     public Termin(Long id, LocalDate date, LocalTime time, String event) {
@@ -25,15 +32,15 @@ public class Termin {
         this.event = event;
     }
 
-    public Termin(LocalDate date, LocalTime time, String event) {
-        this.date = date;
-        this.time = time;
-        this.event = event;
-    }
 
     @Override
     public String toString() {
-        return "Termin{" + "id=" + id + ", Datum=" + date + ", Uhrzeit=" + time + ", Ereignis=" + event + "}";
+        return "Termin{" +
+                "id=" + id +
+                ", date=" + date +
+                ", time=" + time +
+                ", event='" + event + '\'' +
+                '}';
     }
 
     public Long getId() {

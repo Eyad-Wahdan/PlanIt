@@ -1,11 +1,7 @@
 package htw.berlin.webtech.PlanIt.Termin;
 
-import htw.berlin.webtech.PlanIt.Termin.Termin;
-import htw.berlin.webtech.PlanIt.Termin.TerminRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
