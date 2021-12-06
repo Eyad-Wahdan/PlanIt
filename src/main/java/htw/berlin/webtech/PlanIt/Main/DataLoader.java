@@ -1,6 +1,6 @@
 package htw.berlin.webtech.PlanIt.Main;
 
-import htw.berlin.webtech.PlanIt.Termin.Termin;
+import htw.berlin.webtech.PlanIt.Termin.TerminEntity;
 import htw.berlin.webtech.PlanIt.Termin.TerminRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -22,12 +22,12 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args) {
 
-        Termin zahnarztTermin = new Termin(LocalDate.of(2021, 11, 25),
+        TerminEntity zahnarztTerminEntity = new TerminEntity(LocalDate.of(2021, 11, 25),
                 java.time.LocalTime.of(12, 30), "Mein Zahnarzttermin");
 
-        Termin hochzeitsTermin = new Termin(LocalDate.of(2022, 1, 15),
+        TerminEntity hochzeitsTerminEntity = new TerminEntity(LocalDate.of(2022, 1, 15),
                 java.time.LocalTime.of(15, 30), "Mein Hochzeitstermin");
 
-        repository.saveAll(List.of(zahnarztTermin, hochzeitsTermin));
+        repository.saveAll(List.of(zahnarztTerminEntity, hochzeitsTerminEntity));
     }
 }

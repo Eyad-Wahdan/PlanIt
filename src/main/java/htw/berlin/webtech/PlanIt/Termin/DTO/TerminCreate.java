@@ -1,4 +1,4 @@
-package htw.berlin.webtech.PlanIt.Termin;
+package htw.berlin.webtech.PlanIt.Termin.DTO;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

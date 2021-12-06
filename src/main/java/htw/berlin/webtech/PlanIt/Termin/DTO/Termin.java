@@ -1,46 +1,20 @@
-package htw.berlin.webtech.PlanIt.Termin;
+package htw.berlin.webtech.PlanIt.Termin.DTO;
 
-import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-@Entity
 public class Termin {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private LocalDate date;
     private LocalTime time;
     private String event;
-
-
-    public Termin() {
-    }
-
-    public Termin(LocalDate date, LocalTime time, String event) {
-        this.date = date;
-        this.time = time;
-        this.event = event;
-    }
 
     public Termin(Long id, LocalDate date, LocalTime time, String event) {
         this.id = id;
         this.date = date;
         this.time = time;
         this.event = event;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Termin{" +
-                "id=" + id +
-                ", date=" + date +
-                ", time=" + time +
-                ", event='" + event + '\'' +
-                '}';
     }
 
     public Long getId() {
@@ -74,5 +48,4 @@ public class Termin {
     public void setEvent(String event) {
         this.event = event;
     }
-
 }
