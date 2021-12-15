@@ -9,6 +9,8 @@ public class TerminCreate {
     private LocalTime time;
     private String event;
 
+    public TerminCreate() {}
+
     public TerminCreate(LocalDate date, LocalTime time, String event) {
         this.date = date;
         this.time = time;
