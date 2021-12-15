@@ -22,12 +22,18 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args) {
 
-        TerminEntity zahnarztTerminEntity = new TerminEntity(LocalDate.of(2021, 11, 25),
-                java.time.LocalTime.of(12, 30), "Mein Zahnarzttermin");
+        TerminEntity zahnarztTerminEntity = new TerminEntity(LocalDate.of(2022, 10, 25),
+                java.time.LocalTime.of(12, 30), "Zahnarzttermin");
 
-        TerminEntity hochzeitsTerminEntity = new TerminEntity(LocalDate.of(2022, 1, 15),
+        TerminEntity hochzeitsTerminEntity = new TerminEntity(LocalDate.of(2022, 6, 14),
                 java.time.LocalTime.of(15, 30), "Mein Hochzeitstermin");
 
-        repository.saveAll(List.of(zahnarztTerminEntity, hochzeitsTerminEntity));
+        TerminEntity tierarztTerminEntity = new TerminEntity(LocalDate.of(2021, 12, 30),
+                java.time.LocalTime.of(11, 25), "Tierarzttermin");
+
+        TerminEntity anwaltTerminEntity = new TerminEntity(LocalDate.of(2022, 12, 19),
+                java.time.LocalTime.of(16, 15), "Anwalt");
+
+        repository.saveAll(List.of(zahnarztTerminEntity, hochzeitsTerminEntity, tierarztTerminEntity, anwaltTerminEntity));
     }
 }
