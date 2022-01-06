@@ -1,36 +1,35 @@
 package htw.berlin.webtech.PlanIt.Termin.DTO;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.sql.Timestamp;
 
 public class TerminCreate {
 
-    private LocalDate date;
-    private LocalTime time;
+    private Timestamp start;
+    private Timestamp finish;
     private String event;
 
     public TerminCreate() {}
 
-    public TerminCreate(LocalDate date, LocalTime time, String event) {
-        this.date = date;
-        this.time = time;
+    public TerminCreate(Timestamp start, Timestamp finish, String event) {
+        this.start = start;
+        this.finish = finish;
         this.event = event;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public Timestamp getStart() {
+        return start;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setStart(Timestamp start) {
+        this.start = start;
     }
 
-    public LocalTime getTime() {
-        return time;
+    public Timestamp getFinish() {
+        return finish;
     }
 
-    public void setTime(LocalTime time) {
-        this.time = time;
+    public void setFinish(Timestamp finish) {
+        this.finish = finish;
     }
 
     public String getEvent() {

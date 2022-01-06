@@ -1,19 +1,18 @@
 package htw.berlin.webtech.PlanIt.Termin.DTO;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.sql.Timestamp;
 
 public class Termin {
 
     private Long id;
-    private LocalDate date;
-    private LocalTime time;
+    private Timestamp start;
+    private Timestamp finish;
     private String event;
 
-    public Termin(Long id, LocalDate date, LocalTime time, String event) {
+    public Termin(Long id, Timestamp start, Timestamp finish, String event) {
         this.id = id;
-        this.date = date;
-        this.time = time;
+        this.start = start;
+        this.finish = finish;
         this.event = event;
     }
 
@@ -25,20 +24,20 @@ public class Termin {
         this.id = id;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public Timestamp getStart() {
+        return start;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setStart(Timestamp start) {
+        this.start = start;
     }
 
-    public LocalTime getTime() {
-        return time;
+    public Timestamp getFinish() {
+        return finish;
     }
 
-    public void setTime(LocalTime time) {
-        this.time = time;
+    public void setFinish(Timestamp finish) {
+        this.finish = finish;
     }
 
     public String getEvent() {

@@ -15,7 +15,7 @@ public class TerminService {
     TerminRepository repository;
 
     public Termin create(TerminCreate terminCreate) {
-        var terminEntity = new TerminEntity(terminCreate.getDate(), terminCreate.getTime(), terminCreate.getEvent());
+        var terminEntity = new TerminEntity(terminCreate.getStart(), terminCreate.getFinish(), terminCreate.getEvent());
         terminEntity = repository.save(terminEntity);
         return transformEntity(terminEntity);
     }
@@ -44,8 +44,8 @@ public class TerminService {
             return null;
         }
         var terminEntity = terminOptional.get();
-        terminEntity.setDate(terminUpdate.getDate());
-        terminEntity.setTime(terminUpdate.getTime());
+        terminEntity.setStart(terminUpdate.getStart());
+        terminEntity.setFinish(terminUpdate.getFinish());
         terminEntity.setEvent(terminUpdate.getEvent());
 
         terminEntity = repository.save(terminEntity);
@@ -56,8 +56,8 @@ public class TerminService {
     private Termin transformEntity(TerminEntity terminEntity) {
         return new Termin(
                 terminEntity.getId(),
-                terminEntity.getDate(),
-                terminEntity.getTime(),
+                terminEntity.getStart(),
+                terminEntity.getFinish(),
                 terminEntity.getEvent()
         );
     }

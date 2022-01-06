@@ -1,8 +1,7 @@
 package htw.berlin.webtech.PlanIt.Termin;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.sql.Timestamp;
 
 @Entity
 public class TerminEntity {
@@ -12,10 +11,10 @@ public class TerminEntity {
     private Long id;
 
     @Column(nullable = false)
-    private LocalDate date;
+    private Timestamp start;
 
     @Column(nullable = false)
-    private LocalTime time;
+    private Timestamp finish;
 
     @Column(nullable = false)
     private String event;
@@ -23,9 +22,9 @@ public class TerminEntity {
     protected TerminEntity() {
     }
 
-    public TerminEntity(LocalDate date, LocalTime time, String event) {
-        this.date = date;
-        this.time = time;
+    public TerminEntity(Timestamp start, Timestamp finish, String event) {
+        this.start = start;
+        this.finish = finish;
         this.event = event;
     }
 
@@ -33,8 +32,8 @@ public class TerminEntity {
     public String toString() {
         return "Termin{" +
                 "id=" + id +
-                ", date=" + date +
-                ", time=" + time +
+                ", start=" + start +
+                ", finish=" + finish +
                 ", event='" + event + '\'' +
                 '}';
     }
@@ -43,20 +42,20 @@ public class TerminEntity {
         return id;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public Timestamp getStart() {
+        return start;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setStart(Timestamp start) {
+        this.start = start;
     }
 
-    public LocalTime getTime() {
-        return time;
+    public Timestamp getFinish() {
+        return finish;
     }
 
-    public void setTime(LocalTime time) {
-        this.time = time;
+    public void setFinish(Timestamp finish) {
+        this.finish = finish;
     }
 
     public String getEvent() {

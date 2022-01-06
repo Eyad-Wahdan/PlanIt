@@ -7,6 +7,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -22,17 +23,17 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args) {
 
-        TerminEntity zahnarztTerminEntity = new TerminEntity(LocalDate.of(2022, 10, 25),
-                java.time.LocalTime.of(12, 30), "Zahnarzttermin");
+        TerminEntity zahnarztTerminEntity = new TerminEntity(java.sql.Timestamp.valueOf("2022-10-25 10:00:00"),
+                java.sql.Timestamp.valueOf("2022-10-25 12:00:00"), "Zahnarzttermin");
 
-        TerminEntity hochzeitsTerminEntity = new TerminEntity(LocalDate.of(2022, 6, 14),
-                java.time.LocalTime.of(15, 30), "Mein Hochzeitstermin");
+        TerminEntity hochzeitsTerminEntity = new TerminEntity(java.sql.Timestamp.valueOf("2022-02-05 18:00:00"),
+                java.sql.Timestamp.valueOf("2022-02-05 22:00:00"), "Hochzeitstermin");
 
-        TerminEntity tierarztTerminEntity = new TerminEntity(LocalDate.of(2021, 12, 30),
-                java.time.LocalTime.of(11, 25), "Tierarzttermin");
+        TerminEntity tierarztTerminEntity = new TerminEntity(java.sql.Timestamp.valueOf("2022-01-29 08:00:00"),
+                java.sql.Timestamp.valueOf("2022-01-29 09:00:00"), "Tierarzttermin");
 
-        TerminEntity anwaltTerminEntity = new TerminEntity(LocalDate.of(2022, 12, 19),
-                java.time.LocalTime.of(16, 15), "Anwalt");
+        TerminEntity anwaltTerminEntity = new TerminEntity(java.sql.Timestamp.valueOf("2022-02-15 14:00:00"),
+                java.sql.Timestamp.valueOf("2022-02-15 16:00:00"), "Anwalt");
 
         repository.saveAll(List.of(zahnarztTerminEntity, hochzeitsTerminEntity, tierarztTerminEntity, anwaltTerminEntity));
     }
