@@ -53,7 +53,7 @@ public class TerminService {
         return transformEntity(terminEntity);
     }
 
-    private Termin transformEntity(TerminEntity terminEntity) {
+    public Termin transformEntity(TerminEntity terminEntity) {
         return new Termin(
                 terminEntity.getId(),
                 terminEntity.getStart(),
